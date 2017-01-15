@@ -1,6 +1,9 @@
 package kuzja
 
-import "net/http"
+import (
+	"net/http"
+	"fmt"
+)
 
 func Wrap(fw ...func(w http.ResponseWriter, r *http.Request)) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -9,4 +12,6 @@ func Wrap(fw ...func(w http.ResponseWriter, r *http.Request)) func(w http.Respon
 		}
 	}
 }
-
+func Tess(){
+	fmt.Println("ohoho")
+}
